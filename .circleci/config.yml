@@ -26,19 +26,20 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            . venv/bin/activate
+            virtualenv venv2
+            . venv2/bin/activate
             pip install -r requirements.txt
             pip install mock
 
       - save_cache:
           paths:
-            - ./venv
+            - ./venv2
           key: v1-dependencies-{{ checksum "requirements.txt" }}
 
       - run:
           name: run tests
           command: |
-            . venv/bin/activate
+            . venv2/bin/activate
             python -m unittest discover --start-directory tests --top-level-directory .
   test-3.5:
     <<: *test-template
