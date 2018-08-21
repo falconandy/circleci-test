@@ -8,4 +8,4 @@ class FirstTests(unittest.TestCase):
         self.assertEqual(5, add(2, 3))
 
     def test_mult(self):
-        self.assertEqual(6, mult(2, 3))
+        self.assertEqual(7, mult(2, 3))
