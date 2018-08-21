@@ -29,7 +29,6 @@ jobs:
             virtualenv venv-rox
             . venv-rox/bin/activate
             pip install -r requirements.txt
-            pip install mock
 
       - save_cache:
           paths:
