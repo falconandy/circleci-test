@@ -40,6 +40,7 @@ jobs:
           name: run tests
           command: |
             . venv-rox/bin/activate
+            echo $(python --version)
             python -m unittest discover --start-directory tests --top-level-directory .
   test-3.5:
     <<: *test-template
